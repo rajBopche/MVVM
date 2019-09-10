@@ -4,7 +4,6 @@ import android.arch.lifecycle.ViewModel
 import android.databinding.DataBindingUtil
 import android.databinding.ViewDataBinding
 import android.os.Bundle
-import android.os.PersistableBundle
 import android.support.v7.app.AppCompatActivity
 
 /**
@@ -15,14 +14,14 @@ abstract class BaseActivity<T : ViewDataBinding, V : ViewModel> : AppCompatActiv
     protected lateinit var mBinding: T
     protected lateinit var mViewModel: V
 
-    override fun onCreate(savedInstanceState: Bundle?, persistentState: PersistableBundle?) {
-        super.onCreate(savedInstanceState, persistentState)
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
         mBinding = DataBindingUtil.setContentView(this, getContentView())
         init()
         observeData()
     }
 
-    protected abstract fun init()
+    abstract fun init()
 
     protected abstract fun getContentView(): Int
 
