@@ -3,7 +3,6 @@ package com.example.mvvm.ui
 import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModelProviders
 import android.content.Intent
-import android.os.Bundle
 import com.example.mvvm.R
 import com.example.mvvm.databinding.ActivityLoginBinding
 import com.example.mvvm.extensions.onClick
